@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Governance Certification — tamper-evident trust stamps for API descriptions</title>
+    <meta name="description" content="Issue and verify tamper-evident API governance certificates. Attest that an API description passed a named ruleset at a profile threshold, with a SHA-256 fingerprint any consumer can re-verify. Runs entirely in your browser." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Google tag (gtag.js) — API Commons -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNSPT4B4S8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WNSPT4B4S8');
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <strong>API Certification</strong>
+        <span class="tag">certification.apicommons.org</span>
+      </div>
+      <nav>
+        <a href="#" id="nav-about" title="What a certificate attests">About</a>
+        <a href="https://apis.io" target="_blank" rel="noopener">APIs.io</a>
+        <a href="https://apicommons.org" target="_blank" rel="noopener">API Commons</a>
+        <a href="https://github.com/api-commons/governance-certification" target="_blank" rel="noopener">GitHub</a>
+        <button id="engage-ae" class="engage-btn" type="button" title="Work with API Evangelist on API governance">Get help</button>
+      </nav>
+    </header>
+
+    <div class="toolbar">
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" data-mode="issue" role="tab">Issue</button>
+        <button class="tab" data-mode="verify" role="tab">Verify</button>
+      </div>
+      <button class="measure-btn" id="action" type="button">Issue certificate ▸</button>
+      <button class="ghost-btn" id="load-sample" type="button">Load sample</button>
+      <div class="counts" id="status" aria-live="polite"></div>
+    </div>
+
+    <details class="drawer" id="drawer" open>
+      <summary>Inputs</summary>
+
+      <div id="issue-inputs">
+        <div class="io-grid">
+          <div class="io">
+            <h4>API description <span class="muted">(OpenAPI / AsyncAPI — JSON or YAML)</span>
+              <span class="io-btns"><button class="mini-btn" id="up-api" type="button">Upload</button></span></h4>
+            <textarea id="api-text" spellcheck="false" placeholder="Paste the API description being certified…"></textarea>
+            <input type="file" id="file-api" accept=".json,.yaml,.yml" hidden />
+          </div>
+          <div class="io">
+            <h4>Spectral results <span class="muted">(<code>spectral lint -f json</code>)</span>
+              <span class="io-btns"><button class="mini-btn" id="up-res" type="button">Upload</button></span></h4>
+            <textarea id="res-text" spellcheck="false" placeholder="Paste the lint result this certifies against…"></textarea>
+            <input type="file" id="file-res" accept=".json" hidden />
+          </div>
+        </div>
+        <div class="fields">
+          <label>Ruleset id<input id="f-rid" value="api-commons/openapi" /></label>
+          <label>Ruleset version<input id="f-rver" value="0.3.0" /></label>
+          <label>Profile<select id="f-profile"></select></label>
+          <label>Issuer<input id="f-issuer" placeholder="your org (optional)" /></label>
+          <label>Valid for<select id="f-valid"><option value="12">12 months</option><option value="6">6 months</option><option value="24">24 months</option><option value="">No expiry</option></select></label>
+        </div>
+      </div>
+
+      <div id="verify-inputs" hidden>
+        <div class="io-grid">
+          <div class="io">
+            <h4>Certificate <span class="muted">(JSON)</span>
+              <span class="io-btns"><button class="mini-btn" id="up-cert" type="button">Upload</button></span></h4>
+            <textarea id="cert-text" spellcheck="false" placeholder="Paste a certificate to verify…"></textarea>
+            <input type="file" id="file-cert" accept=".json" hidden />
+          </div>
+          <div class="io">
+            <h4>API description <span class="muted">(the one you hold)</span>
+              <span class="io-btns"><button class="mini-btn" id="up-vapi" type="button">Upload</button></span></h4>
+            <textarea id="vapi-text" spellcheck="false" placeholder="Paste the API description to check the certificate against…"></textarea>
+            <input type="file" id="file-vapi" accept=".json,.yaml,.yml" hidden />
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <main class="stage"><section id="report"><div class="loading" id="loading">Loading…</div></section></main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

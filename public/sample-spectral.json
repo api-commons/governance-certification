@@ -1,0 +1,8 @@
+[
+  { "code": "operation-description", "message": "Operation should have a description.", "severity": 1, "source": "invoices.yaml", "path": ["paths", "/invoices", "get"] },
+  { "code": "operation-description", "message": "Operation should have a description.", "severity": 1, "source": "invoices.yaml", "path": ["paths", "/customers", "get"] },
+  { "code": "info-contact-url", "message": "Contact should include a url.", "severity": 1, "source": "invoices.yaml", "path": ["info", "contact"] },
+  { "code": "operation-tag-defined", "message": "Operation tags should be defined at the root.", "severity": 2, "source": "invoices.yaml", "path": ["paths", "/invoices", "post", "tags"] },
+  { "code": "oas3-valid-schema-example", "message": "Consider adding an example.", "severity": 2, "source": "invoices.yaml", "path": ["components", "schemas", "Invoice"] },
+  { "code": "operation-singular-tag", "message": "Operation should have a single tag.", "severity": 2, "source": "invoices.yaml", "path": ["paths", "/customers", "get", "tags"] }
+]

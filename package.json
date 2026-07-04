@@ -1,0 +1,20 @@
+{
+  "name": "governance-certification",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A browser-first tool that issues and verifies tamper-evident API governance certificates — attesting that an API description passed a named ruleset at a profile threshold, with a SHA-256 fingerprint so consumers can re-verify integrity.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  },
+  "dependencies": {
+    "yaml": "^2.6.1"
+  }
+}
