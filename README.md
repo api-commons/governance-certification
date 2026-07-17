@@ -11,12 +11,6 @@ Most governance tooling faces the producer. This one faces the **consumer**: it 
 "should I trust that this API meets a standard?" with a portable, verifiable artifact
 instead of a claim.
 
-Part of the [API Commons](https://apicommons.org/tools/) tools, alongside
-[API Validator](https://github.com/api-commons/api-validator),
-[Governance Coverage](https://github.com/api-commons/governance-coverage),
-[Governance Waivers](https://github.com/api-commons/governance-waivers), and
-[Spectral Reporter](https://github.com/api-commons/spectral-reporter).
-
 ## What a certificate is
 
 ```json
@@ -80,6 +74,17 @@ Pure client-side; fingerprints use the Web Crypto API. No data build.
 
 Everything runs client-side. The API descriptions, results, and certificates you paste
 never leave the page — there is no server.
+
+## Part of API Commons
+
+An open, browser-first tool from **[API Commons](https://apicommons.org)** — free, no backend, your data stays in your browser. Browse the full set at **[apicommons.org/tools](https://apicommons.org/tools/)**.
+
+**Related tools**
+- [API Validator](https://validator.apicommons.org) — lint OpenAPI/AsyncAPI/Arazzo/JSON Schema in your browser
+- [Governance Coverage](https://coverage.apicommons.org) — how much of your API your rules actually check
+- [Governance Waivers](https://waivers.apicommons.org) — sanctioned, owned, expiring governance exceptions
+- [Governance Scorecard](https://scorecard.apicommons.org) — the longitudinal health trend of your governance
+- [Spectral Reporter](https://reporter.apicommons.org) — Spectral JSON → self-contained HTML report
 
 ---
 
